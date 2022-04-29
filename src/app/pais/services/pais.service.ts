@@ -20,9 +20,14 @@ export class PaisService {
 
     //Para que se ejecute tenemos que llamar al subscribe
     return this.http.get<Country[]>(url); //Colocar el tipado
-
-    
   }
 
+  buscarCapital(termino: string): Observable<Country[]>{
+    
+    const url = `${this.apiUrl}/capital/${ termino }`;
+
+    //Para que se ejecute tenemos que llamar al subscribe
+    return this.http.get<Country[]>(url); //Colocar el tipado
+  }
 
 }
